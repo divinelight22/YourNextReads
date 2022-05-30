@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>&#128218; YourNextReads</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="{% static '/css/slick.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'css/slick-theme.css' %}"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/nouislider.min.css' %}"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+		<!-- Custom stlylesheet -->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css"/> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
+        {% block login %}
+        {% endblock %}
+	
+    </head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="https://github.com/divinelight2002"><i class="fa fa-github"></i>Github</a></li>
+						<li><a href="https://www.linkedin.com/in/divyata-gosai-/"><i class="fa fa-linkedin"></i>Linkdin</a></li>
+						<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJftMSvZKcZwqQHKHhvMjkRzhVKxNHdJkRgTfVSMCvgjztCVvfxmmBsVkphLlCZJxCZNhXB"><i class="fa fa-envelope-o"></i>divyatagosai99@gmail.com</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+
+						<li class="active"><a href="{% url 'index' %}">Home</a></li>
+						<li class="active"><a href="{% url 'index' %}">Rated books</a></li>
+                        {% block navbar%}
+                        {% endblock%}
+
+					</ul>
+				</div>
+			</div>
+
+            {% block blk %}
+            {% endblock %}
+            <footer id="footer">
+                <!-- top footer -->
+                <div class="section">
+                    <!-- container -->
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row">
+                            
+                                <div class="footer">
+                                    <h3 class="footer-title">About this web app</h3>
+                                    <p style="color:white">The <b style="color:skyblue">&#128218; YourNextReads</b> is a web app built for book lovers with a Book Recommendation engine. A web app  uses a <b style="color: green">hybrid recommendation engine with different machine learning algorithms </b> to power web app's book recommendations. Using data like rating books from a user, Recommendation Engine uses Machine Learning algorithms to provide a user with highly personalized book recommendations.</p>
+                                    <br>
+                                    <p style="color:white">A hybrid recommendation system is the combination of two diffrent types of recommender systems: content-based filtering and collaborative filtering.</p>   
+                                    <br>
+                                    <p style="color:white">Firstly, <b style="color: green">&#11088; content-based filtering </b> is a method of recommending items by the similarity of the said items. For example, if I like the first book of The Hunger Games, then it gonna recommend me similar books such as Catching Fire (the second book of The Hunger Games), and Mockingjay (the third book of The Hunger Games). For content-based filtering, I implemented <b style="color: green">&#127775; cosine similarity metrics machine learning algorithm.</b></p>
+                                    <br>
+                                    <p style="color:white">Secondly, <b style="color: green">&#11088; collaborative filtering</b> is a method by which user ratings are used to determine user or item similarities. For instance, If there is a high correlation between users rating the first Lord of the Rings book and the second Lord of the Rings book, then they are deemed to be similar. For collaborative filtering, I have applied <b style="color: green">two machine learning algorithms called &#127775; K-means clustering and &#127775; Gaussian mixture modelling</b> to cluster the users and reach the best silhouette score.</p>
+                                    <br>
+                                    <p style = "color:white"><b style="color:skyblue">&#127752; Functionalities</b> that are successfully implemented in the system are:</p>
+                                    <ul style = "color:white" >                
+                                    <li>&#10024; Book recommendation</li>
+                                    <li>&#10024; Give Ratings</li>
+                                    <li>&#10024; View book details</li>
+                                    <li>&#10024; Register, Log in & log out</li>
+                                    <li>&#10024; Show rated books</li>
+                                    <li>&#10024; Search book </li>
+                                    </ul> 
+                                    
+                                    <br>
+                                    <ul class="footer-links">
+                                        <li><a href="https://github.com/divinelight2002"><i class="fa fa-github"></i>Github</a></li>
+                                        <li><a href="https://www.linkedin.com/in/divyata-gosai-/"><i class="fa fa-linkedin"></i>Linkdin</a></li>
+                                        <li><a href="#"><i class="fa fa-envelope-o"></i>divyatagosai99@gmail.com</a></li>
+                                    </ul>
+                                </div>
+                        </div>
+                        <!-- /row -->
+                    </div>
+                    <!-- /container -->
+                </div>
+                <!-- /top footer -->
+    
+                <!-- bottom footer -->
+                <div id="bottom-footer" class="section">
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                
+                                <span class="copyright">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">TDRCE Team</a> and website back-end is made with ❤️ by Divyata Gosai.
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </span>
+                            </div>
+                        </div>
+                            <!-- /row -->
+                    </div>
+                    <!-- /container -->
+                </div>
+                <!-- /bottom footer -->
+            </footer>
+            <!-- /FOOTER -->
+    
+            <!-- jQuery Plugins -->
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js'%}"></script>
+            <script src="{% static 'js/slick.min.js'%}"></script>
+            <script src="{% static 'js/nouislider.min.js'%}"></script>
+            <script src="{% static 'js/jquery.zoom.min.js'%}%"></script>
+            <script src="{% static 'js/main.js'%}"></script>
+    
+        </body>
+    </html>
+    
